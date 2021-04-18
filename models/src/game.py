@@ -1,3 +1,5 @@
+
+
 class Game():
 
     def __init__(self, player_1, player_2):
@@ -18,3 +20,18 @@ class Game():
             return "draw"
                 
         return player_2
+
+def decide_mvp(move_1, move_2):
+    if move_1 == "Rock" and move_2 == "Scissors":
+        return move_1
+            
+    if move_1 == "Scissors" and move_2 == "Paper":
+        return move_1
+            
+    if move_1 == "Paper" and move_2 == "Rock":
+        return move_1
+        
+    if move_1 == move_2:
+        return None
+            
+    return move_2
