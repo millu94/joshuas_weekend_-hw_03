@@ -17,14 +17,14 @@ def mvp_result(move_1, move_2):
 def index():
     return render_template('index.html', title='Home')
 
-# @app.route('/rps_home/<player_1>/player_2', methods=['POST'])
-# def play_game(player_1, player_2):
-#     player_1_name = request.form['name']
-#     player_1_move = request.form['move']
-#     player_1 = Player(player_1_name, player_1_move)
-#     player_2 = Player("Bleep-Bloop", computer_choice)
-#     result = Game.decide_winner(player_1, player_2)
-#     return render_template('result.html', title='result', result=result)
+@app.route('/rps_home/result', methods=['POST'])
+def play_game():
+    player_1_name = request.form['name']
+    player_1_move = request.form['move']
+    player_1 = Player(player_1_name, player_1_move)
+    player_2 = Player("Bleep-Bloop", computer_choice)
+    result = Game.decide_winner(player_1, player_2)
+    return render_template('result.html', title='result', winner=result)
 
 
 
